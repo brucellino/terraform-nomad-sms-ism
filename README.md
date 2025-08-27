@@ -28,16 +28,35 @@ This module makes explicit use of Cloudflare features in order to implement the 
 Events are delivered to workers which use KV stores to looking cached configuration and state data.
 API Keys are stored as Secrets and available only to the workers bound to them via their environment.
 
+# Developer environment
+
+## Developer tools
+
+You will need Terraform and NodeJS to work on this repository.
+The developer environment is declared in [`mise.toml`](mise.toml).
+See [Mise -- Getting started](https://mise.jdx.dev/getting-started.html) for more information
+Ensure that the tools are available by preparing your environment, if you are using mise for the first time:
+
+```bash
+# Example for bash - change the shell name to your own.
+# https://mise.jdx.dev/getting-started.html#activate-mise
+eval "$(mise activate bash)"
+mise trust
+mise install
+```
+
+<!-- Add mise tasks run install <worker> when we have the workers with packages -->
+
 ## Pre-commit hooks
 
 
-The [pre-commit](https://pre-commit.com) framework is used to manage pre-commit hooks for this repository.
+The [pre-commit](https://pre-commit.com) framework is used to manage pre-commit hooks for this repository in order to maintain a consistent development style across contributors.
 A few well-known hooks are provided to cover correctness, security and safety in terraform.
 See [`.pre-commit-config.yaml`](.pre-commit-config.yaml)
 
 
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+# Requirements
 
 | Name | Version |
 |------|---------|

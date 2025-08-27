@@ -1,0 +1,12 @@
+[tools]
+terraform = "1.13"
+node = "22"
+
+[env]
+_.file = ".env"
+_.path = ['{{config_root}}/node_modules/.bin']
+
+[tasks.install]
+alias = "i"
+description = "Install npm dependencies"
+run = "npm install"
