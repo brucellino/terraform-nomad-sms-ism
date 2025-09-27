@@ -8,10 +8,6 @@ on:
       - main
 jobs:
   validate:
-    strategy:
-      matrix:
-        example:
-          - simple
     name: validate
     runs-on: ubuntu-24.04
     steps:
@@ -24,9 +20,9 @@ jobs:
           curl -fSL https://releases.hashicorp.com/terraform/1.2.3/terraform_1.2.3_linux_amd64.zip \
           | gunzip -> terraform ; chmod u+x terraform
       - name: Init terraform
-        run: ./terraform -chdir=examples/${{ matrix.example }} init
+        run: ./terraform init
       - name: Validate terraform
-        run: ./terraform -chdir=examples/${{ matrix.example }} validate
+        run: ./terraform validate
   release:
     needs:
       - validate
