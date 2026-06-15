@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup tools
-        uses: jdx/mise-action:v4.1.0
+        uses: jdx/mise-action@v4.1.0
         with:
           install: true
           reshim: true
